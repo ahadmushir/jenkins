@@ -19,7 +19,7 @@ void test() {
   def num_str = str1.tokenize('v')
   println(num_str)
   
-  def (major, minor, patch) = num_str.tokenize('.').collect { it.toInteger() }
+  def (major, minor, patch) = num_str[0].tokenize('.').collect { it.toInteger() }
   println(major)
   println(minor)
   println(patch)
