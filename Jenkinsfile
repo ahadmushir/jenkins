@@ -16,7 +16,10 @@ pipeline {
 
 void test() {
   String str1 = "v0.0.0"
-  def (major, minor, patch) = str1.tokenize('.').collect { it.toInteger() }
+  def num_str = str1.tokenize('v')
+  println(num_str)
+  
+  def (major, minor, patch) = num_str.tokenize('.').collect { it.toInteger() }
   println(major)
   println(minor)
   println(patch)
