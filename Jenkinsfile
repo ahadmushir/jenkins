@@ -21,6 +21,6 @@ void test() {
   
   def (major, minor, patch) = num_str[0].tokenize('.').collect { it.toInteger() }
   println(major)
-  println(minor)
-  println(patch)
+  println(minor + 1)
+  println(patch + 4)
 }
