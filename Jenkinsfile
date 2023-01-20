@@ -34,7 +34,7 @@ void test() {
 }
 
 void shh() {
-  def content = readJSON file: "${env.WORKSPACE}\\conf.json"
+  def content = readJSON file: "${env.WORKSPACE}/conf.json"
   String relname = content.versioning 
   println(relname)
 }
