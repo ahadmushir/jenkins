@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-        docker { image 'node:16.13.1-alpine' }
-    }
+  agent any
   stages {
     stage("build") {
       steps{
@@ -11,7 +9,7 @@ pipeline {
     }
     stage("docker-check") {
       steps{
-        sh "node --version"
+        sh "echo 'this is echiooo'" 
       }
     }
   }
