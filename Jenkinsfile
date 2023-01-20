@@ -1,6 +1,7 @@
 pipeline {
-  agent any
-  
+  agent {
+        docker { image 'node:16.13.1-alpine' }
+    }
   stages {
     stage("build") {
       steps{
@@ -8,15 +9,7 @@ pipeline {
         test()
       }
     }
-    
-  
     stage("docker-check") {
-      agent {
-                docker {
-                    image 'node:16.13.1-alpine'
-                    reuseNode true
-                }
-            }
       steps{
         sh "node --version"
       }
