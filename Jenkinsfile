@@ -10,6 +10,20 @@ pipeline {
     }
     
   }
+  
+  stages {
+    stage("docker-check") {
+      agent {
+                docker {
+                    image 'node:16.13.1-alpine'
+                    reuseNode true
+                }
+            }
+      steps{
+        sh "node --version"
+      }
+    }
+  }
 
 }
 
