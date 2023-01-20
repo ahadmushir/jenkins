@@ -9,7 +9,7 @@ pipeline {
     }
     stage("docker-check") {
       steps{
-        sh "jq -c '.versioning = "minor"' conf.json > tmp.json && mv tmp.json conf.json" 
+        sh "echo Ahad" 
       }
     }
     stage("shell") {
@@ -34,6 +34,6 @@ void test() {
 }
 
 void shh() {
-  String relname = sh(returnStdout: true, script: "jq -c '.versioning = "minor"' conf.json > tmp.json && mv tmp.json conf.json").trim()
+  String relname = sh(returnStdout: true, script: "jq -c '.versioning = "major"' conf.json > tmp.json && mv tmp.json conf.json").trim()
   println(relname)
 }
