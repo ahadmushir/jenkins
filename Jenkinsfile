@@ -10,9 +10,7 @@ pipeline {
     }
     
   }
-  
-  stages {
-    stage("docker-check") {
+  stage("docker-check") {
       agent {
                 docker {
                     image 'node:16.13.1-alpine'
@@ -23,7 +21,7 @@ pipeline {
         sh "node --version"
       }
     }
-  }
+  
 
 }
 
